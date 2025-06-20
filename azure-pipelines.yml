@@ -1,0 +1,72 @@
+trigger:
+  branches:
+    include:
+    - main
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          wget "https://sca-downloads.s3.amazonaws.com/cli/2.12.7/ScaResolver-linux64.tar.gz"
+      displayName: 'Download sca-resolver'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          tar -xzvf "ScaResolver-linux64.tar.gz"
+      displayName: 'unzip sca-resolver'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          rm -rf "ScaResolver-linux64.tar.gz"
+      displayName: 'remove tar file'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          wget "wget https://github.com/Checkmarx/ast-cli/releases/download/2.3.20/ast-cli_linux_x64.tar.gz"
+      displayName: 'Download AST-CLI'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          tar -xzvf ast-cli_linux_x64.tar.gz
+      displayName: 'unzip AST-CLI'  
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          rm -rf "ast-cli_linux_x64.tar.gz"
+      displayName: 'remove AST-CLI tar file'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          wget "wget https://github.com/hitesh2310/ado-src/archive/refs/tags/v1.0.tar.gz"
+      displayName: 'Download repo'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          tar -xzvf "v1.0.tar.gz"
+      displayName: 'unzip repo'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          rm -rf "v1.0.tar.gz"
+      displayName: 'remove repo tar file'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          /home/vsts/work/1/s/cx scan create --project-name "headcount" --branch main --scan-types sca -s "/home/vsts/work/1/s/ado-src-1.0" --sca-resolver "/home/vsts/work/1/s/ScaResolver" --sca-resolver-params "--gradle-parameters='-PrivMavenURL=123' --log-level Debug"
+      displayName: 'Execute SCA scan'
+ 
