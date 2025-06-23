@@ -73,6 +73,6 @@ stages:
         script: |
           # chmod +x ./cx
           # echo $env:apiKey
-          ./cx scan create  --apikey "$env:apiKey"  --project-name "headcount" --branch main --scan-types sca -s "./ado-src-1.0" --sca-resolver "./ScaResolver" --sca-resolver-params "--gradle-parameters='-Prepository.proxy.url=123 -Prepository.proxy.username=123 -Prepository.proxy.password=123' --log-level Debug"
+          ./cx scan create  --apikey eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlY2RkYmY4OS01MGNhLTQ2ZjMtYjIzMC02NjVlYWU5NWYzZTkifQ.eyJpYXQiOjE3NDg1MjU5NzQsImp0aSI6ImRiYTEwN2UzLTFiZjMtNGVmOC1iMjI3LWVkMWMyOTY4NGM0NCIsImlzcyI6Imh0dHBzOi8vZXUuaWFtLmNoZWNrbWFyeC5uZXQvYXV0aC9yZWFsbXMvY3hfc2VnIiwiYXVkIjoiaHR0cHM6Ly9ldS5pYW0uY2hlY2ttYXJ4Lm5ldC9hdXRoL3JlYWxtcy9jeF9zZWciLCJzdWIiOiJjYmUzMDE2OS05YWM0LTRmNTMtYWQ5ZS0xNzk2ZWJiODgxNDkiLCJ0eXAiOiJPZmZsaW5lIiwiYXpwIjoiYXN0LWFwcCIsInNpZCI6IjRlMDgyYTM0LTU0ZmUtNDY1NC04MTNjLTgxOTk2Y2YyM2Y5YSIsInNjb3BlIjoicHJvZmlsZSBhc3QtYXBpIHJvbGVzIGdyb3VwcyBlbWFpbCBpYW0tYXBpIG9mZmxpbmVfYWNjZXNzIn0.O6zVcxg19AOGxDq_ePgY42KTOIEJ84B46nv-TwTowlkwd65sW83iWHpC0NcKe0SwJujy927FH-J-h6u-3OOEkA  --project-name "headcount" --branch main --scan-types sca -s "./ado-src-1.0" --sca-resolver "./ScaResolver" --sca-resolver-params "--gradle-parameters='-Prepository.proxy.url=123 -Prepository.proxy.username=123 -Prepository.proxy.password=123' --log-level Debug"
       displayName: 'Execute SCA scan'
  
