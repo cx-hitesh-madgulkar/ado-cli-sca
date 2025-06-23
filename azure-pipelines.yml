@@ -73,6 +73,6 @@ stages:
         script: |
           # chmod +x ./cx
           echo $env:apiKey
-          ./cx scan create  --apikey "$env:apiKey"  --project-name "headcount" --branch main --scan-types sca -s "./ado-src-1.0" --sca-resolver "./ScaResolver" --sca-resolver-params "--gradle-parameters='-Prepository.proxy.url=123 -Prepository.proxy.username=123 -Prepository.proxy.password=123' --log-level Debug"
+          ./cx scan create  --apikey "${env:apiKey}"  --project-name "headcount" --branch main --scan-types sca -s "./ado-src-1.0" --sca-resolver "./ScaResolver" --sca-resolver-params "--gradle-parameters='-Prepository.proxy.url=123 -Prepository.proxy.username=123 -Prepository.proxy.password=123' --log-level Debug"
       displayName: 'Execute SCA scan'
  
