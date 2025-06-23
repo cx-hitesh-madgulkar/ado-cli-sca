@@ -67,6 +67,6 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          /home/vsts/work/1/s/cx scan create --project-name "headcount" --branch main --scan-types sca -s "/home/vsts/work/1/s/ado-src-1.0" --sca-resolver "/home/vsts/work/1/s/ScaResolver" --sca-resolver-params "--gradle-parameters='-PrivMavenURL=123' --log-level Debug"
+          ./cx scan create --project-name "headcount" --branch main --scan-types sca -s "./ado-src-1.0" --sca-resolver "./ScaResolver" --sca-resolver-params "--gradle-parameters='-PrivMavenURL=123' --log-level Debug"
       displayName: 'Execute SCA scan'
  
