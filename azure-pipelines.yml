@@ -49,7 +49,7 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          "wget https://github.com/hitesh2310/ado-src/archive/refs/tags/v1.0.tar.gz"
+          wget https://github.com/hitesh2310/ado-src/archive/refs/tags/v1.0.tar.gz
       displayName: 'Download repo'
     - task: PowerShell@2
       inputs:
