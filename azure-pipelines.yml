@@ -31,7 +31,7 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          "wget https://github.com/Checkmarx/ast-cli/releases/download/2.3.20/ast-cli_linux_x64.tar.gz"
+          wget https://github.com/Checkmarx/ast-cli/releases/download/2.3.20/ast-cli_linux_x64.tar.gz
       displayName: 'Download AST-CLI'
     - task: PowerShell@2
       inputs:
