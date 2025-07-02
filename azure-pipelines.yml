@@ -7,7 +7,7 @@ stages:
   jobs:
   - job: Job
     pool:
-      name: demo-agent
+      name: ubuntu-latest
     steps:
     - task: PowerShell@2
       inputs:
